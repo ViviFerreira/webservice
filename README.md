@@ -6,6 +6,7 @@
 - /ordenar
 
 ### **Executar**
+#### Faça o download do projeto e execute os comandos:
 ```
     $ composer update
     $ npm apidoc -i app/ -o apidoc ou 
