@@ -6,16 +6,16 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 final class MainController {
  /**
- * @api {GET} /status Status da API
+ * @api {GET} /v1/status Status da API
  * @apiSampleRequest /v1/status
  * @apiVersion 1.0.0
  * @apiDescription Método utilizado para mostrar status da API
  * @apiGroup Sistema
- * @apiSuccess {String} status Mensagem de sucesso
+ * @apiSuccess {String} Status Mensagem de sucesso
  * 
- * @apiSuccessExample {JSON} Resposta-sucesso
+ * @apiSuccessExample {JSON} resposta-sucesso
 * {
-*   "Status": API respondendo
+*   "Status": "API respondendo"
 * }
 */
 
@@ -74,7 +74,7 @@ final class MainController {
      * @apiParam {Number} num Número para calcular se é par ou impar.
      * @apiParamExample {JSON} requisicao-exemplo
      * http://localhost/webservice/v1/par-impar/5
-     * @apiSuccess (200) {Integer} Resultado Resultado do cálculo.
+     * @apiSuccess (200) {String} Resultado Resultado do cálculo.
      * @apiSuccessExample {JSON} resposta-sucesso
      * {
      *    "Resultado": "Impar"
@@ -84,7 +84,7 @@ final class MainController {
      * @apiError (500) {String} num-invalido Valor não numérico foi informado.
      * @apiErrorExample {JSON} resposta-erro
      * {
-     *   "Resultado": "Valores não numéricos informados!"
+     *   "Resultado": "Valor não numérico foi informado!"
      * }
      * 
      */
@@ -102,10 +102,10 @@ final class MainController {
      * @api {POST} /v1/ordenar Ordenar 
      * @apiSampleRequest /v1/ordenar
      * @apiVersion 1.0.0
-     * @apiDescription Método ordena um array de forma crescente ou decrescente
+     * @apiDescription Método que ordena um array de forma crescente ou decrescente
      * @apiGroup Arrays
      * 
-     * @apiParam (Body) {Array} list Array de valores para calcular o maior.
+     * @apiParam (Body) {Array} list Array de valores para ordenar.
      * @apiParam (Body) {String} order Forma de ordenação.
      * @apiParamExample {JSON} requisicao-exemplo1
      * {
@@ -119,7 +119,7 @@ final class MainController {
      *      ,"order" : "desc"
      * }
      * 
-     * @apiSuccess (200) {Integer} Resultado Resultado do cálculo.
+     * @apiSuccess (200) {Array} Resultado Resultado do cálculo.
      * @apiSuccessExample {JSON} resposta-sucesso
      * {
      *    "Resultado": [
@@ -131,7 +131,7 @@ final class MainController {
      * }
      * 
      * @apiError (500) {String} erro Ordenação Inválida.
-     * @apiError (500) {String} order-invalido Forma de ordenação informada é inválido.
+     * @apiError (500) {String} order-invalido Forma de ordenação informada é inválida.
      * @apiErrorExample {JSON} resposta-erro
      * {
      *   "Resultado": "Campo de ordenação inválido!"
