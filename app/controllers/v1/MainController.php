@@ -146,7 +146,6 @@ final class MainController {
         sort($list); //Ordena Array
         $list = $order == "asc" || $order == "desc" ? $list : "Campo de ordenação inválido!";
         $list = $order == "desc" ? array_reverse($list) : $list; //Inverte Array
-        $list = $order == "asc" ? $list : $list;
         return $res->withJson([
             "Resultado" => $list
         ]);
