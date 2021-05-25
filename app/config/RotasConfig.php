@@ -28,7 +28,7 @@ final class RotasConfig {
 
             $appM->get("/status", array(MainController::class, "status"));
             $appM->post("/maior", array(MainController::class, "maior"));
-            $appM->get("/par-impar", array(MainController::class, "parImpar"));
+            $appM->get("/par-impar/{num}", array(MainController::class, "parImpar"));
             $appM->post("/ordenar", array(MainController::class, "ordenar"));
 
         });
